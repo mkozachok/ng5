@@ -1,0 +1,14 @@
+<div class="goal-board ">
+  <div class="new-goal">
+    <form>
+      <input type="text" placeholder="Add new goal..." [(ngModel)]="goal.title" name="title">
+      <button type="submit" (click)="addNewGoal()">Add</button>
+    </form>
+  </div>
+  <div class="goals">
+    <p>You have {{total}} goals</p>
+    <div class="goal-list" *ngFor="let item of goals">
+      <p class="goal">{{item.title}} <button (click)="removeGoal(item)">Remove</button></p>
+    </div>
+  </div>
+</div>
